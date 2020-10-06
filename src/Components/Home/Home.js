@@ -1,18 +1,15 @@
 import React, { useContext, useState } from "react";
-
+import { Button, Form, FormControl } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { TitleContext } from "../../App";
-
 import FakeData from "../../FakeData/FakeData";
-
 import "./Home.css";
 const Home = () => {
   const [title, setTitle] = useContext(TitleContext);
-
   const [details, setDetails] = useState({});
 
   return (
-    <div className="row">
+    <div className="row" style={{ backgroundColor: "#f0f2f5" }}>
       {FakeData.map((image) => (
         <div
           onClick={() => setTitle({ title: image.title, image: image.image })}
